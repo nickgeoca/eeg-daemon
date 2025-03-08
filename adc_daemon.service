@@ -1,0 +1,15 @@
+[Unit]
+Description=EEG Processing Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/path/to/your/adc_daemon
+Restart=always
+RestartSec=5
+User=your_user
+WorkingDirectory=/path/to/working/directory
+Environment="RUST_LOG=info"
+
+[Install]
+WantedBy=multi-user.target
